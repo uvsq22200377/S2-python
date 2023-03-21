@@ -3,13 +3,13 @@ import random
 
 def cree_fichier_alea(nb, nomfichier):
 
-    nb = 2
+   
     nomfichier = "nombrealéatoires"
     fichier = open(nomfichier, 'w')
     for i in range(nb):
-        x = random.randint(0, 500)
-        y = random.randint(0, 500)
-        fichier.write(float(x)+' '+float(y))
+        x = random.uniform(0, 500)
+        y = random.uniform(0, 500)
+        fichier.write((x)+' '+(y))
     fichier.close()
 
 
@@ -19,10 +19,10 @@ def lit_fichier(nomfic):
     listeX = []
     listeY = []
     fichier = open(nomfic, 'r')
+
     for ligne in fichier:
         listeX.append(ligne[0])
         listeY.append(ligne[1])
     fichier.close
 
     return lit_fichier
-# comment faire ressortir les listes ?
