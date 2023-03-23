@@ -25,3 +25,7 @@ def lit_fichier(nomfic):
     fichier.close
 
     return lit_fichier
+
+
+def trace_nuage():
+    
