@@ -39,8 +39,7 @@ def trace_Nuage(nomf):
     abscisse, ordonnés = lit_fichier(nomf)
     nombre_de_point = len(abscisse)
     for i in range(len(abscisse)):
-        canvas.create_oval(abscisse[i] - 1, ordonnés[i] - 1, \
-                            abscisse[i] + 1, ordonnés[i] + 1, fill='black')
+        canvas.create_oval(abscisse[i] - 1, ordonnés[i] - 1, abscisse[i] + 1, ordonnés[i] + 1, fill='black')
     print(nombre_de_point)
 
 
@@ -58,6 +57,9 @@ def moyenne(serie):
     moy = somme / len(serie)
     return moy
 
+
+def variance(serie):
+    
 
 cree_fichier_alea(5, 'teststat')
 lit_fichier('teststat')
