@@ -1,0 +1,8 @@
+def moyenne(serie):
+    somme = sum(serie)
+    moy = somme / len(serie)
+    return moy
+
+
+serie = [1, 2, 3, 4]
+print(moyenne(serie))
