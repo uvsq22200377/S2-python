@@ -59,7 +59,37 @@ def moyenne(serie):
 
 
 def variance(serie):
-    
+    somme = sum(serie)
+    variance = (somme - moyenne(serie))**2 / len(serie)
+    return variance
+
+
+def covariance(serieX, serieY):
+    sommeX = sum(serieX)
+    sommeY = sum(serieY)
+    covariance = (sommeX - moyenne(serieX))(sommeY - moyenne(serieY)) / len(serieY)
+    return covariance
+
+
+def correlation(serieX, serieY):
+    correlation = covariance(serieX, serieY)/(((variance(serieX))(variance(serieY)))**0.5)
+    return correlation
+
+
+def fortecorrelation(serieX, serieY):
+    cor = correlation(serieX, serieY)
+    if cor > 0.8 or cor < -0.8:
+        return True
+    else:
+        return False
+
+
+def droite_reg(serieX, serieY):
+    a = covariance(serieX, serieY)/variance(serieX)
+    b = moyenne(serieY) - a*moyenne(serieX)
+    tuple = [a, b]
+    return tuple
+
 
 cree_fichier_alea(5, 'teststat')
 lit_fichier('teststat')
