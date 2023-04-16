@@ -91,6 +91,12 @@ def droite_reg(serieX, serieY):
     return tuple
 
 
+fenetre = tk.Tk()
+fenetre.title("fenêtre graphique")
+
+
+
+
 cree_fichier_alea(5, 'teststat')
 lit_fichier('teststat')
 trace_Nuage('teststat')
